@@ -26,6 +26,7 @@ end
 group :development do
   gem 'guard', require: false
   gem 'guard-rspec', require: false
+  gem 'guard-rubocop', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
   gem 'spring'
