@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+# read ruby version from .ruby-version file
+ruby File.read('.ruby-version').strip
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
