@@ -9,20 +9,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-group :core do
-  gem 'rails', '~> 5.1.4'
-end
-
-group :config do
+group :config, :default do
   gem 'figaro'
 end
 
-group :server do
-  gem 'puma', '~> 3.7'
+group :core, :default do
+  gem 'rails', '~> 5.1.4'
 end
 
-group :database do
+group :database, :default do
   gem 'pg', '~> 0.18'
+end
+
+group :server, :default do
+  gem 'puma', '~> 3.7'
 end
 
 group :development, :test do
