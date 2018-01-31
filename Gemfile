@@ -13,6 +13,10 @@ group :core do
   gem 'rails', '~> 5.1.4'
 end
 
+group :config do
+  gem 'figaro'
+end
+
 group :server do
   gem 'puma', '~> 3.7'
 end
