@@ -5,7 +5,7 @@ default_keys = %w[
 ]
 
 production_keys = default_keys + %w[
-  database_password
+  database_url
 ]
 
 required = Rails.env.production? ? production_keys : default_keys
