@@ -17,4 +17,4 @@ production:
   <<: *default
   database: todolist-api_production
   username: todolist-api
-  password: <%= ENV['TODOLIST-API_DATABASE_PASSWORD'] %>
+  password: <%= ENV['database_password'] %>
