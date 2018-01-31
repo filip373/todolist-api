@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman', require: false
   gem 'guard', require: false
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
