@@ -88,3 +88,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+Raven.configure do |config|
+  config.dsn = ENV['raven_dsn']
+  config.tags = { app_env: ENV['app_env'] }
+  config.sanitize_fields =
+    Rails.application.config.filter_parameters.map(&:to_s)
+end

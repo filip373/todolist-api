@@ -5,5 +5,7 @@ test:
   secret_key_base: 091873d055a37d44cf7dba8f0f553047d00818f3d8eaa00b9dc08afa0a03ef832dbf543e2ce4b9153e3f05ef78c7b0a9ceca78797e408226b3061c842d79d722
 
 production:
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-  database_url: <%= ENV["DATABASE_URL"] %>
+  app_env: <%= ENV['APP_ENV'] %>
+  database_url: <%= ENV['DATABASE_URL'] %>
+  raven_dsn: <%= ENV['RAVEN_DSN'] %>
+  secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>
