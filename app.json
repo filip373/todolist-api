@@ -3,8 +3,9 @@
   "scripts": {
   },
   "env": {
-    "SECRET_KEY_BASE": { "required": true },
-    "DATABASE_URL": { "required": true }
+    "DATABASE_URL": { "required": true },
+    "RAVEN_DSN": { "required": true },
+    "SECRET_KEY_BASE": { "required": true }
   },
   "formation": {
   },

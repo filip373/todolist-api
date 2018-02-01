@@ -25,6 +25,10 @@ group :server, :default do
   gem 'puma', '~> 3.7'
 end
 
+group :production do
+  gem 'sentry-raven'
+end
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
