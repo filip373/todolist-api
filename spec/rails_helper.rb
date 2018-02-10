@@ -9,6 +9,9 @@ if Rails.env.production?
 end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'database_cleaner'
+require 'shoulda-matchers'
+require 'support/factory_bot'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -36,4 +39,25 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning { example.run }
+  end
+
+  Dir[Rails.root.join('spec/requests/shared_examples/**/*.rb')].each do |f|
+    require f
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :active_record
+    with.library :active_model
+  end
 end
