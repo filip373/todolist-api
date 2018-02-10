@@ -29,8 +29,15 @@ group :production do
   gem 'sentry-raven'
 end
 
+group :tests do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
 
