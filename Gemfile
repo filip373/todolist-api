@@ -21,6 +21,10 @@ group :database, :default do
   gem 'pg', '~> 0.18'
 end
 
+group :docs, :default do
+  gem 'swagger_ui_engine'
+end
+
 group :server, :default do
   gem 'puma', '~> 3.7'
 end

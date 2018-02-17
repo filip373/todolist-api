@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :notes
     end
   end
+
+  mount SwaggerUiEngine::Engine, at: '/api-docs'
 end
