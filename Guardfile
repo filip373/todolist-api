@@ -76,3 +76,10 @@ guard :rubocop do
   watch(/.+\.rb$/)
   watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end
+
+guard 'brakeman', quiet: true, run_on_start: true do
+  watch(%r{^app/.+\.(erb|haml|rhtml|rb)$})
+  watch(%r{^config/.+\.rb$})
+  watch(%r{^lib/.+\.rb$})
+  watch('Gemfile')
+end

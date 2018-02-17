@@ -1,0 +1,137 @@
+swagger: '2.0'
+info:
+  title: TodoList API
+  description: This is a documentation of TodoList API
+  version: "1.0.0"
+basePath: /api/v1
+produces:
+  - application/json
+paths:
+  /notes:
+    get:
+      summary: Fetch all notes
+      description: Fetches all the notes existing in the database
+      tags:
+        - Notes
+      responses:
+        200:
+          description: An array of notes
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Note'
+    post:
+      summary: Create new note
+      description: Creates new note with attributes specified in request body
+      tags:
+        - Notes
+      parameters:
+        - in: body
+          name: note
+          description: The note to create
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+              content:
+                type: string
+      responses:
+        200:
+          description: Note object
+          schema:
+            type: object
+            $ref: '#/definitions/Note'
+        422:
+          description: Unprocessable entity,
+            note could not be created due to invalid attributes
+  /notes/{noteId}:
+    get:
+      summary: Fetch note of given ID
+      description: Fetches only the note which ID matches param ID
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: noteId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the note to get
+      responses:
+        200:
+          description: Note object
+          schema:
+            type: object
+            $ref: '#/definitions/Note'
+        404:
+          description: Note of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update a note
+      description: Updates a note of given ID with attributes
+        specified in request body
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: noteId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the note to update
+        - in: body
+          name: note
+          description: The new note attributes
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+              content:
+                type: string
+      responses:
+        200:
+          description: Note object
+          schema:
+            type: object
+            $ref: '#/definitions/Note'
+        422:
+          description: Unprocessable entity,
+            note could not be created due to invalid attributes
+        404:
+          description: Note of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Deletes note of given ID
+      description: Deletes the note which ID matches param ID from database
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: noteId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the note to delete
+      responses:
+        204:
+          description: The note has been deleted succesfully
+        404:
+          description: Note of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
+definitions:
+  Note:
+    $ref: 'definitions/note.yaml'
+  Error:
+    $ref: 'definitions/error.yaml'
