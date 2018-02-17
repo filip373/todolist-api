@@ -2,17 +2,17 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Notes', type: :request do
+RSpec.describe 'API::V1::Notes', type: :request do
   let(:note_1) { create :note, title: 'first title', content: 'first' }
   let(:note_2) { create :note, title: 'second title', content: 'second' }
   let(:parsed_response) { JSON.parse response.body }
 
-  describe 'GET /notes' do
+  describe 'GET /api/v1/notes' do
     before do
       note_1
       note_2
     end
-    before { get notes_path }
+    before { get api_v1_notes_path }
 
     it_behaves_like 'json response', :ok
 
@@ -24,8 +24,8 @@ RSpec.describe 'Notes', type: :request do
     end
   end
 
-  describe 'GET /notes/:id' do
-    before { get note_path(note_1.id) }
+  describe 'GET /api/v1/notes/:id' do
+    before { get api_v1_note_path(note_1.id) }
 
     it_behaves_like 'json response', :ok
 
@@ -35,8 +35,8 @@ RSpec.describe 'Notes', type: :request do
     end
   end
 
-  describe 'POST /notes' do
-    subject { post notes_path(note_params) }
+  describe 'POST /api/v1/notes' do
+    subject { post api_v1_notes_path(note_params) }
     let(:note_params) do
       {
         note: {
@@ -71,9 +71,9 @@ RSpec.describe 'Notes', type: :request do
     end
   end
 
-  describe 'PUT /notes/:id' do
+  describe 'PUT /api/v1/notes/:id' do
     before { note_1 }
-    subject { put note_path(note_params) }
+    subject { put api_v1_note_path(note_params) }
     let(:note_params) do
       {
         id: note_id,
@@ -121,9 +121,9 @@ RSpec.describe 'Notes', type: :request do
     end
   end
 
-  describe 'DELETE /notes/:id' do
+  describe 'DELETE /api/v1/notes/:id' do
     before { note_1 }
-    subject { delete note_path(note_id) }
+    subject { delete api_v1_note_path(note_id) }
     let(:note_id) { note_1.id }
 
     context 'for existing note id' do
