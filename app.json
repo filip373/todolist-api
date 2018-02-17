@@ -3,6 +3,8 @@
   "scripts": {
   },
   "env": {
+    "ADMIN_PASSWORD": { "required": true },
+    "ADMIN_USERNAME": { "required": true },
     "APP_ENV": { "required": true },
     "DATABASE_URL": { "required": true },
     "RAVEN_DSN": { "required": true },

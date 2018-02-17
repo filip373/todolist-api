@@ -1,15 +1,29 @@
 # frozen_string_literal: true
 
-default_keys = %w[
+COMMON_KEYS = %w[
   secret_key_base
-]
+].freeze
 
-production_keys = default_keys + %w[
+DEVELOPMENT_KEYS = COMMON_KEYS + %w[
+  admin_password
+  admin_username
+].freeze
+
+PRODUCTION_KEYS = COMMON_KEYS + %w[
+  admin_password
+  admin_username
   app_env
   database_url
   raven_dsn
-]
+].freeze
 
-required = Rails.env.production? ? production_keys : default_keys
+keys = {
+  'test' => COMMON_KEYS,
+  'development' => DEVELOPMENT_KEYS,
+  'production' => PRODUCTION_KEYS
+}
 
+required = keys[Rails.env]
+throw "Invalid environment: #{Rails.env}" unless required
 Figaro.require_keys required
+
