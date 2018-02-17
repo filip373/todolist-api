@@ -26,4 +26,3 @@ keys = {
 required = keys[Rails.env]
 throw "Invalid environment: #{Rails.env}" unless required
 Figaro.require_keys required
-
