@@ -29,6 +29,6 @@ module TodolistApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.secret_key_base = ENV['secret_key_base']
+    config.secret_key_base = Settings.secret_key_base
   end
 end
