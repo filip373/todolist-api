@@ -10,7 +10,7 @@ properties:
     example: 34
   content:
     type: string
-    maxLength: 50
+    maxLength: 500
     example: This is some sample note content,
       it contains some text body.
   title:
