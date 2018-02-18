@@ -1,0 +1,3 @@
+  admin_password: password
+  admin_username: admin
+  secret_key_base: 95b1277ac98d63dda2377172098e8213349c73538ed8fd8d2ab31c5c5087724ca60c4a1331932451550347b5fbae25cc49166eea042d212759f262f8d60ff9e8

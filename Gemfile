@@ -9,11 +9,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Default groups
+
 group :config, :default do
-  gem 'figaro'
+  gem 'config'
 end
 
 group :core, :default do
+  gem 'active_model_serializers', '~> 0.10.0'
   gem 'rails', '~> 5.1.4'
 end
 
@@ -29,13 +32,23 @@ group :server, :default do
   gem 'puma', '~> 3.7'
 end
 
+# Non-default groups
+
+group :seeds do
+  gem 'faker'
+end
+
+# Environment groups
+
 group :production do
   gem 'sentry-raven'
 end
 
 group :tests do
+  gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
 
 group :development, :test do
@@ -46,6 +59,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'brakeman', require: false
   gem 'foreman', require: false
   gem 'guard', require: false

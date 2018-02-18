@@ -10,16 +10,10 @@ properties:
     example: 34
   content:
     type: string
-    maxLength: 50
+    maxLength: 500
     example: This is some sample note content,
       it contains some text body.
   title:
     type: string
     maxLength: 30
     example: Some note title
-  created_at:
-    type: string
-    example: 2018-02-17T19:02:40.882Z
-  updated_at:
-    type: string
-    example: 2018-02-18T20:48:11.002Z
