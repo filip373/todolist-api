@@ -10,6 +10,7 @@ end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'database_cleaner'
+require 'simplecov'
 require 'shoulda-matchers'
 require 'support/factory_bot'
 
@@ -61,3 +62,5 @@ Shoulda::Matchers.configure do |config|
     with.library :active_model
   end
 end
+
+SimpleCov.start
