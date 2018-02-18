@@ -8,6 +8,7 @@
     "ADMIN_USERNAME": { "required": true },
     "APP_ENV": { "required": true },
     "RAVEN_DSN": { "required": true },
+    "RAILS_GROUPS": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
   },
   "formation": {
