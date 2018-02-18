@@ -9,6 +9,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Default groups
+
 group :config, :default do
   gem 'config'
 end
@@ -28,6 +30,14 @@ end
 group :server, :default do
   gem 'puma', '~> 3.7'
 end
+
+# Non-default groups
+
+group :seeds do
+  gem 'faker'
+end
+
+# Environment groups
 
 group :production do
   gem 'sentry-raven'
