@@ -10,7 +10,7 @@ git_source(:github) do |repo_name|
 end
 
 group :config, :default do
-  gem 'figaro'
+  gem 'config'
 end
 
 group :core, :default do

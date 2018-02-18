@@ -1,0 +1,6 @@
+admin_password: <%= ENV.fetch 'ADMIN_PASSWORD' %>
+admin_username: <%= ENV.fetch 'ADMIN_USERNAME' %>
+app_env: <%= ENV.fetch 'APP_ENV' %>
+database_url: <%= ENV.fetch 'DATABASE_URL' %>
+raven_dsn: <%= ENV.fetch 'RAVEN_DSN' %>
+secret_key_base: <%= ENV.fetch 'SECRET_KEY_BASE' %>

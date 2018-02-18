@@ -84,8 +84,8 @@ Rails.application.configure do
 end
 
 Raven.configure do |config|
-  config.dsn = ENV['raven_dsn']
-  config.tags = { app_env: ENV['app_env'] }
+  config.dsn = Settings.raven_dsn
+  config.tags = { app_env: Settings.app_env }
   config.sanitize_fields =
     Rails.application.config.filter_parameters.map(&:to_s)
 end
