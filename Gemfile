@@ -16,6 +16,7 @@ group :config, :default do
 end
 
 group :core, :default do
+  gem 'active_model_serializers', '~> 0.10.0'
   gem 'rails', '~> 5.1.4'
 end
 
