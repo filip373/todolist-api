@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'API::V1::Notes', type: :request do
+  include_context 'created auth user'
   let(:note_1) { create :note, title: 'first title', content: 'first' }
   let(:note_2) { create :note, title: 'second title', content: 'second' }
   let(:parsed_response) { JSON.parse response.body }
@@ -12,7 +13,11 @@ RSpec.describe 'API::V1::Notes', type: :request do
       note_1
       note_2
     end
-    before { get api_v1_notes_path }
+    before do
+      VCR.use_cassette('auth0_jwks') do
+        auth_get api_v1_notes_path
+      end
+    end
 
     it_behaves_like 'json response', :ok
 
@@ -25,7 +30,11 @@ RSpec.describe 'API::V1::Notes', type: :request do
   end
 
   describe 'GET /api/v1/notes/:id' do
-    before { get api_v1_note_path(note_1.id) }
+    before do
+      VCR.use_cassette('auth0_jwks') do
+        auth_get api_v1_note_path(note_1.id)
+      end
+    end
 
     it_behaves_like 'json response', :ok
 
@@ -36,7 +45,12 @@ RSpec.describe 'API::V1::Notes', type: :request do
   end
 
   describe 'POST /api/v1/notes' do
-    subject { post api_v1_notes_path(note_params) }
+    subject do
+      VCR.use_cassette('auth0_jwks') do
+        auth_post api_v1_notes_path(note_params)
+      end
+    end
+
     let(:note_params) do
       {
         note: {
@@ -73,7 +87,12 @@ RSpec.describe 'API::V1::Notes', type: :request do
 
   describe 'PUT /api/v1/notes/:id' do
     before { note_1 }
-    subject { put api_v1_note_path(note_params) }
+    subject do
+      VCR.use_cassette('auth0_jwks') do
+        auth_put api_v1_note_path(note_params)
+      end
+    end
+
     let(:note_params) do
       {
         id: note_id,
@@ -123,7 +142,12 @@ RSpec.describe 'API::V1::Notes', type: :request do
 
   describe 'DELETE /api/v1/notes/:id' do
     before { note_1 }
-    subject { delete api_v1_note_path(note_id) }
+    subject do
+      VCR.use_cassette('auth0_jwks') do
+        auth_delete api_v1_note_path(note_id)
+      end
+    end
+
     let(:note_id) { note_1.id }
 
     context 'for existing note id' do

@@ -15,7 +15,9 @@ module API
       private
 
       def authenticate_user!
-        GetUserFromJWT.new(DecodeJWT.new(raw_token).call).call
+        unless GetUserFromJWT.new(DecodeJWT.new(raw_token).call).call
+          raise Unauthorized
+        end
       rescue DecodeJWTError
         raise Unauthorized
       end

@@ -33,6 +33,7 @@ require 'shoulda-matchers'
 %w[
   spec/support/initializers/*.rb
   spec/support/helpers/*.rb
+  spec/support/shared_contexts/*.rb
   spec/requests/shared_examples/*.rb
 ].each do |path|
   Dir[Rails.root.join(path)].each { |f| require f }
@@ -47,6 +48,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.include APIRequestHelper, type: :request
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

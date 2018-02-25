@@ -23,7 +23,7 @@ RSpec.describe GetUserFromJWT, type: :service do
     end
 
     context 'when JWT is Hash' do
-      context 'and does NOT contain user_id key' do
+      context 'and does NOT contain sub key' do
         let(:jwt) { { something: 'test' } }
 
         it 'raises error' do
@@ -31,8 +31,8 @@ RSpec.describe GetUserFromJWT, type: :service do
         end
       end
 
-      context 'and contains user_id key' do
-        let(:jwt) { { 'user_id' => 'test-id-123' } }
+      context 'and contains sub key' do
+        let(:jwt) { { 'sub' => 'test-id-123' } }
 
         context 'and there exists a user with this id' do
           let!(:user) { create :user, oauth_user_id: 'test-id-123' }
