@@ -7,8 +7,14 @@ module Auth
     end
 
     def callback
-      return render(plain: params[:error]) if params[:error]
+      return render(plain: error_param) if error_param
       render plain: GetAccessToken.new(params[:code]).call
+    end
+
+    private
+
+    def error_param
+      params[:error]
     end
   end
 end
