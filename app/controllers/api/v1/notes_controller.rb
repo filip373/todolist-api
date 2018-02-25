@@ -2,9 +2,9 @@
 
 module API
   module V1
-    class NotesController < ApplicationController
+    class NotesController < APIV1Controller
       before_action :set_note, only: %i[show update destroy]
-      rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+      rescue_from ActiveRecord::RecordNotFound, with: :respond_not_found
 
       # GET /notes
       def index
@@ -53,10 +53,6 @@ module API
 
       def note_params
         params.require(:note).permit :title, :content
-      end
-
-      def render_not_found(error)
-        render json: { error: error.message }, status: :not_found
       end
     end
   end

@@ -12,7 +12,6 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'simplecov'
 require 'shoulda-matchers'
-require 'support/factory_bot'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -31,6 +30,14 @@ require 'support/factory_bot'
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
+%w[
+  spec/support/initializers/*.rb
+  spec/support/helpers/*.rb
+  spec/requests/shared_examples/*.rb
+].each do |path|
+  Dir[Rails.root.join(path)].each { |f| require f }
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
@@ -49,18 +56,4 @@ RSpec.configure do |config|
   config.around(:each) do |example|
     DatabaseCleaner.cleaning { example.run }
   end
-
-  Dir[Rails.root.join('spec/requests/shared_examples/**/*.rb')].each do |f|
-    require f
-  end
 end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :active_record
-    with.library :active_model
-  end
-end
-
-SimpleCov.start

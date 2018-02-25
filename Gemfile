@@ -17,6 +17,8 @@ end
 
 group :core, :default do
   gem 'active_model_serializers', '~> 0.10.0'
+  gem 'faraday'
+  gem 'json-jwt'
   gem 'rails', '~> 5.1.4'
 end
 
@@ -44,16 +46,18 @@ group :production do
   gem 'sentry-raven'
 end
 
-group :tests do
+group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
 end

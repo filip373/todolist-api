@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://todolist-test.eu.auth0.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"authorization_code","client_id":"C76UvHjgoWMaF6cNy62Cln0jau4U3jjX","client_secret":"PG9IDPFr8BDbrZJ89Soa3YJOOoTHCc0voog2NT9dZD-PAh5rzOTIkRrdJ0J3KC1Q","redirect_uri":"http://todolist.test/auth/callback","code":"asdf"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Sun, 25 Feb 2018 13:05:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+      X-Auth0-Requestid:
+      - 295e4665db8d05732859
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1519563914'
+      Cache-Control:
+      - private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_grant","error_description":"Invalid authorization
+        code"}'
+    http_version: 
+  recorded_at: Sun, 25 Feb 2018 13:05:40 GMT
+recorded_with: VCR 3.0.3

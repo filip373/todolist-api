@@ -15,4 +15,4 @@ test:
 
 production:
   <<: *default
-  url: <%= Settings.database_url %>
+  url: <%= Rails.env.production? && Settings.database_url %>

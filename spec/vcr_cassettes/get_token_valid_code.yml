@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://todolist-test.eu.auth0.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"authorization_code","client_id":"C76UvHjgoWMaF6cNy62Cln0jau4U3jjX","client_secret":"PG9IDPFr8BDbrZJ89Soa3YJOOoTHCc0voog2NT9dZD-PAh5rzOTIkRrdJ0J3KC1Q","redirect_uri":"http://todolist.test/auth/callback","code":"mj1roOin_KUpIL4b"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 Feb 2018 13:29:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1572'
+      Connection:
+      - keep-alive
+      X-Auth0-Requestid:
+      - 55aa44ce0fd856829a2d
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1519565370'
+      Cache-Control:
+      - private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Robots-Tag:
+      - noindex, nofollow, nosnippet, noarchive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rSXpPVEU0UXpFd056VkdSVUZGTWtaRFFqSkNSREJFTXpBeU1VRkdORVU0UWtKRk1rWTRSUSJ9.eyJpc3MiOiJodHRwczovL3RvZG9saXN0LXRlc3QuZXUuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTE3NTE3NDM1OTcyMDg2NzU3NzYwIiwiYXVkIjpbImh0dHBzOi8vdG9kb2xpc3QtYXBpLnRlc3QiLCJodHRwczovL3RvZG9saXN0LXRlc3QuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTUxOTU2NTM2OSwiZXhwIjoxNTE5NjUxNzY5LCJhenAiOiJDNzZVdkhqZ29XTWFGNmNOeTYyQ2xuMGphdTRVM2pqWCIsInNjb3BlIjoib3BlbmlkIn0.mDpHHCbOm6d1CZJgWiA4eMLYSIkfecimg45gUpR2dfk1PMPGqktwHzYNXUlgwpeKD-aKjzhGx-j-nfh6ySKVSccqRYBckCWsprbl1m7iWYCZRpuS6ze2PRXyDKiNHat8KWvtZ6ftM8soXOs7yogIHQg5tp_UUdihjb_eLKrqOis3A4bJAKx2VI4_HXHJYhg9TIG_jpCRrLZ7pYFo-MO9i4w9uBNr67dHopME6jR1SNSdRAi-65RS2o3DKDDQXLGlW2bHMIqiCkOf_CHHcJYWzGphXCtX1csd3Jj10sJsz2v1fscB811Ijv98BtjYczCymeHjq0RQ19Ytqm8QTL6exg","id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rSXpPVEU0UXpFd056VkdSVUZGTWtaRFFqSkNSREJFTXpBeU1VRkdORVU0UWtKRk1rWTRSUSJ9.eyJpc3MiOiJodHRwczovL3RvZG9saXN0LXRlc3QuZXUuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTE3NTE3NDM1OTcyMDg2NzU3NzYwIiwiYXVkIjoiQzc2VXZIamdvV01hRjZjTnk2MkNsbjBqYXU0VTNqalgiLCJpYXQiOjE1MTk1NjUzNjksImV4cCI6MTUxOTYwMTM2OX0.xx6Kq0Be6NRW3C-EmwSWn7LMYVuoRYM4zwd79F2wkwF7afugkRAJCAU2TBfRqdHo0uLX36xsPEWUC1FQ6pxS2QRgNtb8ZJrgnTs06D-yxukakf23JrUG8SrQ0tc7M2NrqPSdySH0jWx9FeAEBvzRM_ym0hEdCyeJtiSCMITNasTLIuqEBv6zdQBGCUiujE2AGTrr29I-nMI-mUjkho-DGYL7F2d6LY8loqDLDNEdMOdSJvJ2nn-slv0U1xr4JiVQUqIxfk4mo9npXoKu7gCK-03CLQSdhUkZyMlc7w88iH3xydrdmz9UV5lqQMcOjuiB_1sd9fu3GT2mF_xGt4EbHg","expires_in":86400,"token_type":"Bearer"}'
+    http_version: 
+  recorded_at: Sun, 25 Feb 2018 13:29:56 GMT
+recorded_with: VCR 3.0.3
