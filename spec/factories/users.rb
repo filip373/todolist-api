@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :user do
-    oauth_user_id 'MyString'
+    oauth_id 'MyString'
   end
 end

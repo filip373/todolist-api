@@ -35,7 +35,7 @@ RSpec.describe GetUserFromJWT, type: :service do
         let(:jwt) { { 'sub' => 'test-id-123' } }
 
         context 'and there exists a user with this id' do
-          let!(:user) { create :user, oauth_user_id: 'test-id-123' }
+          let!(:user) { create :user, oauth_id: 'test-id-123' }
 
           it 'returns user of given id' do
             expect(subject.call).to eq(user)
@@ -43,7 +43,7 @@ RSpec.describe GetUserFromJWT, type: :service do
         end
 
         context 'and there does NOT exist a user with this id' do
-          before { create :user, oauth_user_id: 'test-id-987' }
+          before { create :user, oauth_id: 'test-id-987' }
 
           it 'raises error' do
             expect(subject.call).to be_nil
