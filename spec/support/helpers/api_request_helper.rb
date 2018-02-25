@@ -19,10 +19,10 @@ module APIRequestHelper
 
   private
 
-  def auth_enriched(**args, &block)
+  def auth_enriched(**args)
     args[:headers] ||= {}
     args[:headers].merge! auth_header
-    block.call args
+    yield args
   end
 
   def auth_header

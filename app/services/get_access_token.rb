@@ -6,12 +6,10 @@ class GetAccessToken
   end
 
   def call
-    response_payload = get_response_payload
-    access_token = response_payload['access_token']
-    if response_payload['error'] || !access_token
-      raise GetTokenError, response_payload
-    end
-    response_payload['access_token']
+    payload = response_payload
+    access_token = payload['access_token']
+    raise GetTokenError, payload if payload['error'] || !access_token
+    payload['access_token']
   end
 
   URL = URI::HTTPS.build(host: Settings.auth0_domain).to_s
@@ -25,7 +23,7 @@ class GetAccessToken
 
   private
 
-  def get_response_payload
+  def response_payload
     JSON.parse response.body
   end
 
