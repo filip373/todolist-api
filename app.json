@@ -7,6 +7,7 @@
     "ADMIN_PASSWORD": { "required": true },
     "ADMIN_USERNAME": { "required": true },
     "APP_ENV": { "required": true },
+    "APP_URL": { "required": true },
     "AUTH0_API_AUDIENCE": { "required": true },
     "AUTH0_CLIENT_ID": { "required": true },
     "AUTH0_CLIENT_SECRET": { "required": true },
