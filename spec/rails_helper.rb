@@ -35,6 +35,7 @@ require 'shoulda-matchers'
   spec/support/helpers/*.rb
   spec/support/shared_contexts/*.rb
   spec/requests/shared_examples/*.rb
+  spec/exceptions/shared_examples/*.rb
 ].each do |path|
   Dir[Rails.root.join(path)].each { |f| require f }
 end

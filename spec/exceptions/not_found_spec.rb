@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe DecodeJWTError, type: :exception do
+RSpec.describe NotFound, type: :exception do
   it_behaves_like 'standard exception'
 end
