@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RedirectURI
-  VALUE = Settings.app_url + '/auth/callback'
+  VALUE = Settings.hostname + '/auth/callback'
 
   def call
     VALUE
