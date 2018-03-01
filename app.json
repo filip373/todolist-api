@@ -1,18 +1,18 @@
 {
   "name": "todolist-api",
   "scripts": {
-    "postdeploy": "./scripts/postdeploy.sh"
+    "postdeploy": "./lib/scripts/postdeploy.sh"
   },
   "env": {
     "ADMIN_PASSWORD": { "required": true },
     "ADMIN_USERNAME": { "required": true },
     "APP_ENV": { "required": true },
-    "APP_URL": { "required": true },
     "AUTH0_API_AUDIENCE": { "required": true },
     "AUTH0_CLIENT_ID": { "required": true },
     "AUTH0_CLIENT_SECRET": { "required": true },
     "AUTH0_DOMAIN": { "required": true },
     "HEROKU_APP_NAME": { "required": true },
+    "HOSTNAME": { "required": true },
     "RAVEN_DSN": { "required": true },
     "RAILS_GROUPS": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
