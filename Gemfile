@@ -46,6 +46,10 @@ group :production do
   gem 'sentry-raven'
 end
 
+group :production, :test do
+  gem 'platform-api'
+end
+
 group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
