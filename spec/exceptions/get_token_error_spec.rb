@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Unauthorized, type: :lib do
+RSpec.describe GetTokenError, type: :exception do
   subject { described_class.new message }
   let(:message) { 'some test message' }
 

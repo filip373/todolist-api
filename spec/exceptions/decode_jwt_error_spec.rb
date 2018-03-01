@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe GetTokenError, type: :lib do
+RSpec.describe DecodeJWTError, type: :exception do
   subject { described_class.new message }
   let(:message) { 'some test message' }
 
