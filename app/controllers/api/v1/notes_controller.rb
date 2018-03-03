@@ -52,7 +52,7 @@ module API
       end
 
       def note_params
-        params.require(:note).permit :title, :content
+        params.require(:note).permit :title, :content, :list_id
       end
     end
   end
