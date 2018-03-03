@@ -55,6 +55,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
+  gem 'timecop'
   gem 'vcr'
   gem 'webmock'
 end
