@@ -5,14 +5,21 @@
 
 API backend of todolist app
 
-## Configuration
+## Setup and configuration
+Install dependencies:
 `bundle install`
 
-## Database initialization
+Initialize and setup the database:
 `bundle exec rails db:setup`
 
 ## Running
-`foreman start`
+`bundle exec rails s`
 
 ## Development
+Run guard to watch the files for changes and trigger automatic tests and checks:
 `bundle exec guard`
+
+Run tests:
+`bundle exec rspec`
+
+Swagger docs are available at `/api-docs` endpoint
