@@ -1,0 +1,17 @@
+title: List
+type: object
+required:
+  - id
+  - title
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 34
+  deadline:
+    type: dateTime
+    example: 2018-05-10
+  title:
+    type: string
+    maxLength: 30
+    example: Some list title

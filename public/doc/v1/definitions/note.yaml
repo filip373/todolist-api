@@ -17,3 +17,7 @@ properties:
     type: string
     maxLength: 30
     example: Some note title
+  list_id:
+    type: integer
+    format: int64
+    example: 12
