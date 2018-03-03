@@ -12,12 +12,12 @@ class GetAccessToken
     payload['access_token']
   end
 
-  URL = URI::HTTPS.build(host: Settings.auth0_domain).to_s
+  URL = URI::HTTPS.build(host: Settings.auth0.domain).to_s
 
   DEFAULT_BODY = {
     grant_type: 'authorization_code',
-    client_id: Settings.auth0_client_id,
-    client_secret: Settings.auth0_client_secret,
+    client_id: Settings.auth0.client_id,
+    client_secret: Settings.auth0.client_secret,
     redirect_uri: RedirectURI.new.call
   }.freeze
 
