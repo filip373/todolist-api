@@ -172,8 +172,7 @@ paths:
               content:
                 type: string
               list_id:
-                type: integer
-                format: int64
+                type: string
       responses:
         200:
           description: Note object
@@ -233,8 +232,7 @@ paths:
               content:
                 type: string
               list_id:
-                type: integer
-                format: int64
+                type: string
       responses:
         200:
           description: Note object
