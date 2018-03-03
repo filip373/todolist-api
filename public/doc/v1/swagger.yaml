@@ -1,11 +1,21 @@
 swagger: '2.0'
 info:
   title: TodoList API
-  description: This is a documentation of TodoList API
+  description: |
+    This is a documentation of TodoList API.
+
+    To use API you need to use Bearer token authentication, obtain a token at /auth/login path.
   version: "1.0.0"
 basePath: /api/v1
 produces:
   - application/json
+securityDefinitions:
+  authorizationHeader:
+    type: apiKey
+    in: header
+    name: authorization
+security:
+  - authorizationHeader: []
 paths:
   /notes:
     get:
