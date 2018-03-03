@@ -5,14 +5,34 @@
 
 API backend of todolist app
 
-## Configuration
+## Setup and configuration
+Add following lines to your `/etc/hosts` file to configure DNS:
+
+```
+# Todolist app
+127.0.0.1 todolist.local
+```
+
+Install dependencies:
+
 `bundle install`
 
-## Database initialization
+Initialize and setup the database:
+
 `bundle exec rails db:setup`
 
 ## Running
-`foreman start`
+Run rails server:
+
+`bundle exec rails s`
 
 ## Development
+Run guard to watch the files for changes and trigger automatic tests and checks:
+
 `bundle exec guard`
+
+Run tests:
+
+`bundle exec rspec`
+
+Swagger docs are available at `/api-docs` endpoint

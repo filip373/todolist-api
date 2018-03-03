@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://todolist-test.eu.auth0.com/.well-known/jwks.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Feb 2018 20:43:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1599'
+      Connection:
+      - keep-alive
+      X-Auth0-Requestid:
+      - 3ec7187cf0e993d7874b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Ratelimit-Limit:
+      - '20'
+      X-Ratelimit-Remaining:
+      - '19'
+      X-Ratelimit-Reset:
+      - '1519245820'
+      Cache-Control:
+      - private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Robots-Tag:
+      - noindex, nofollow, nosnippet, noarchive
+    body:
+      encoding: UTF-8
+      string: '{"keys":[{"alg":"RS256","kty":"RSA","use":"sig","x5c":["MIIDDzCCAfegAwIBAgIJChXKuKSg9ExIMA0GCSqGSIb3DQEBCwUAMCUxIzAhBgNVBAMTGnRvZG9saXN0LXRlc3QuZXUuYXV0aDAuY29tMB4XDTE4MDIyMTIwMDY0MFoXDTMxMTAzMTIwMDY0MFowJTEjMCEGA1UEAxMadG9kb2xpc3QtdGVzdC5ldS5hdXRoMC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDUyCPY7ZqZMFeHZfp6CIcrwu95572/RYR7Ye3vTI5VzaYCWmBEuJBfQn6kdvMJNOPIaBOb8GBgnN/xx5nXTZuwrd/S5BMeBFBJh55AJOMTCKizVU87y4c/VkRLsYZlG600Bey05bZKo6lNlRfxUjJLTY/bnAqTnDzNySwMyLTxk2Y+petP3ATtLswMyMYQD7fNy76IfbSZe7ySNFR4ID6LmlS4fGQywOmqZagqCc3jpGpBi/p+F2Q1KmxAzJvhsWGSS/l5FAQbvi5B/knjZTrdEBcbZ02OvXaGrpWyZZAF4SLE+dlJ0N7bRF58JRl73/MNRL6G1PbnEpv8jAOgJcunAgMBAAGjQjBAMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFF3mUlsxvZVEqAnv+ssCUqXLkcaPMA4GA1UdDwEB/wQEAwIChDANBgkqhkiG9w0BAQsFAAOCAQEAmmBzxaaZImarLbeLup0Eg8veXgR+FM63xPH1eT10bT1Xk5DqX2d1EuwVxzfc2dSX8x4QciTfE8MydYy5RSq0+aPIWchdYbGRiJBQL1JBIzd+Oz9dmJVSAPP+xHqWp7IRSFnOoANpmB+JBukT484owEwjLMa7LmMsotqntVhMiJyulXCtBAwQocEg/MedmTA/BIrdQW/2yqKZozyJwOeW8RYHwblxmT7VIJdRsdnwVCZXGibwWc/EVHlQDNnSADF8z0EpJYmV4DqiAT+TVnoez2gCHrvFkCc4l+KgrgV7DDk+1zHKfgjTAn85N8gxE/4XwVCv8CXTIloR3FCdRpZ+ng=="],"n":"1Mgj2O2amTBXh2X6egiHK8Lveee9v0WEe2Ht70yOVc2mAlpgRLiQX0J-pHbzCTTjyGgTm_BgYJzf8ceZ102bsK3f0uQTHgRQSYeeQCTjEwios1VPO8uHP1ZES7GGZRutNAXstOW2SqOpTZUX8VIyS02P25wKk5w8zcksDMi08ZNmPqXrT9wE7S7MDMjGEA-3zcu-iH20mXu8kjRUeCA-i5pUuHxkMsDpqmWoKgnN46RqQYv6fhdkNSpsQMyb4bFhkkv5eRQEG74uQf5J42U63RAXG2dNjr12hq6VsmWQBeEixPnZSdDe20RefCUZe9_zDUS-htT25xKb_IwDoCXLpw","e":"AQAB","kid":"NkIzOTE4QzEwNzVGRUFFMkZDQjJCRDBEMzAyMUFGNEU4QkJFMkY4RQ","x5t":"NkIzOTE4QzEwNzVGRUFFMkZDQjJCRDBEMzAyMUFGNEU4QkJFMkY4RQ"}]}'
+    http_version: 
+  recorded_at: Wed, 21 Feb 2018 20:43:49 GMT
+recorded_with: VCR 3.0.3

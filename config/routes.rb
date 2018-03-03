@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :auth do
+    get '/login', to: 'auths#login'
+    get '/callback', to: 'auths#callback'
+  end
+
   mount SwaggerUiEngine::Engine, at: '/api-docs'
 end
