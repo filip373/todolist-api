@@ -30,7 +30,7 @@ class DecodeJWT
 
   def jwks_url
     URI::HTTPS.build(
-      host: Settings.auth0_domain,
+      host: Settings.auth0.domain,
       path: '/.well-known/jwks.json'
     ).to_s
   end
