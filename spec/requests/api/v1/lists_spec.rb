@@ -55,7 +55,8 @@ RSpec.describe 'API::V1::Lists', type: :request do
       {
         list: {
           title: title,
-          deadline: 1.day.since
+          deadline: 1.day.since,
+          user_id: User.first.id
         }
       }
     end

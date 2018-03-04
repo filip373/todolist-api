@@ -52,7 +52,7 @@ module API
       end
 
       def list_params
-        params.require(:list).permit :title, :deadline
+        params.require(:list).permit :title, :deadline, :user_id
       end
     end
   end
