@@ -23,7 +23,7 @@ group :core, :default do
 end
 
 group :database, :default do
-  gem 'pg', '~> 0.18'
+  gem 'pg'
 end
 
 group :docs, :default do
@@ -32,12 +32,6 @@ end
 
 group :server, :default do
   gem 'puma', '~> 3.7'
-end
-
-# Non-default groups
-
-group :seeds do
-  gem 'faker'
 end
 
 # Environment groups
@@ -62,6 +56,7 @@ end
 
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'

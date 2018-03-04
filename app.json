@@ -15,7 +15,6 @@
     "HEROKU_APP_NAME": { "required": true },
     "HOSTNAME": { "required": true },
     "RAVEN_DSN": { "required": true },
-    "RAILS_GROUPS": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
   },
   "formation": {
