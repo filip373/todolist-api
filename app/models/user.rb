@@ -4,5 +4,5 @@ class User < ApplicationRecord
   has_many :lists
 
   validates :email, presence: true, uniqueness: true
-  validates :oauth_id, presence: true
+  validates :oauth_id, presence: true, uniqueness: true
 end

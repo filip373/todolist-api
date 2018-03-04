@@ -10,4 +10,5 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_uniqueness_of(:email) }
   it { is_expected.to validate_presence_of(:oauth_id) }
+  it { is_expected.to validate_uniqueness_of(:oauth_id) }
 end
