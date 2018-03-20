@@ -103,6 +103,10 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.12.0)
+    email_spec (2.1.1)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.6)
     erubi (1.7.0)
     erubis (2.7.0)
     excon (0.60.0)
@@ -147,6 +151,7 @@ GEM
       excon
       moneta
       multi_json (>= 1.9.2)
+    htmlentities (4.3.4)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
@@ -158,6 +163,8 @@ GEM
       securecompare
       url_safe_base64
     jsonapi-renderer (0.2.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -329,6 +336,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   config
   database_cleaner
+  email_spec
   factory_bot_rails
   faker
   faraday

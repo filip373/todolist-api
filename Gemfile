@@ -47,6 +47,7 @@ end
 group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
+  gem 'email_spec'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
   gem 'timecop'
