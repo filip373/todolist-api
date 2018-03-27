@@ -50,6 +50,8 @@ RSpec.describe 'API::V1::Lists', type: :request do
         auth_post api_v1_lists_path(list_params)
       end
     end
+    before { allow(ListMailer).to receive(:new_list).and_return(stubbed_mailer) }
+    let(:stubbed_mailer) { double deliver_later: nil }
 
     let(:list_params) do
       {
@@ -69,7 +71,13 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'changes lists count in db by 1' do
-        expect { subject }.to(change { List.count }.by(1))
+        expect { subject }.to change(List, :count).by(1)
+      end
+
+      it 'calls ListMailer' do
+        expect(ListMailer).to receive(:new_list)
+        expect(stubbed_mailer).to receive(:deliver_later)
+        subject
       end
     end
 
@@ -81,7 +89,13 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does NOT change lists count in db' do
-        expect { subject }.not_to(change { List.count })
+        expect { subject }.not_to change(List, :count)
+      end
+
+      it 'does NOT call ListMailer' do
+        expect(ListMailer).not_to receive(:new_list)
+        expect(stubbed_mailer).not_to receive(:deliver_later)
+        subject
       end
     end
   end
@@ -112,7 +126,7 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does NOT change lists count in db' do
-        expect { subject }.not_to(change { List.count })
+        expect { subject }.not_to change(List, :count)
       end
     end
 
@@ -124,7 +138,7 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does NOT change lists count in db' do
-        expect { subject }.not_to(change { List.count })
+        expect { subject }.not_to change(List, :count)
       end
     end
 
@@ -136,7 +150,7 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does NOT change lists count in db' do
-        expect { subject }.not_to(change { List.count })
+        expect { subject }.not_to change(List, :count)
       end
     end
   end
@@ -158,7 +172,7 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does changes lists count in db by -1' do
-        expect { subject }.to(change { List.count }.by(-1))
+        expect { subject }.to change(List, :count).by(-1)
       end
     end
 
@@ -170,7 +184,7 @@ RSpec.describe 'API::V1::Lists', type: :request do
       end
 
       it 'does NOT change lists count in db' do
-        expect { subject }.not_to(change { List.count })
+        expect { subject }.not_to change(List, :count)
       end
     end
   end

@@ -23,6 +23,7 @@ module API
         @list = List.new list_params
 
         if @list.save
+          ListMailer.new_list(@list.id).deliver_later
           render json: @list,
                  status: :created,
                  location: api_v1_list_path(@list)
