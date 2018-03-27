@@ -20,6 +20,7 @@ group :core, :default do
   gem 'faraday'
   gem 'json-jwt'
   gem 'rails', '~> 5.1.4'
+  gem 'sidekiq'
 end
 
 group :database, :default do
