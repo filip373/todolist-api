@@ -4,5 +4,6 @@ FactoryBot.define do
   factory :list do
     title 'MyString'
     deadline nil
+    user
   end
 end

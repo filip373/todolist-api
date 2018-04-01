@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :user do
-    oauth_id 'MyString'
+    sequence(:email) { |n| "user#{n}@email.test" }
+    sequence(:oauth_id) { |n| "a10#{n}" }
   end
 end

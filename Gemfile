@@ -20,6 +20,7 @@ group :core, :default do
   gem 'faraday'
   gem 'json-jwt'
   gem 'rails', '~> 5.1.4'
+  gem 'sidekiq'
 end
 
 group :database, :default do
@@ -47,6 +48,7 @@ end
 group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
+  gem 'email_spec'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
   gem 'timecop'
@@ -71,6 +73,7 @@ group :development do
   gem 'guard-brakeman', require: false
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
+  gem 'letter_opener_web', '~> 1.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
   gem 'spring'

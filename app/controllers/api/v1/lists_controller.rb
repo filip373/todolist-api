@@ -20,14 +20,13 @@ module API
 
       # POST /lists
       def create
-        @list = List.new list_params
-
-        if @list.save
+        @list = InitializeList.new(params: list_params, user: current_user).call
+        if SaveNewList.new(@list).call
           render json: @list,
                  status: :created,
                  location: api_v1_list_path(@list)
         else
-          render json: @list.errors, status: :unprocessable_entity
+          render_errors
         end
       end
 
@@ -36,7 +35,7 @@ module API
         if @list.update list_params
           render json: @list
         else
-          render json: @list.errors, status: :unprocessable_entity
+          render_errors
         end
       end
 
@@ -53,6 +52,10 @@ module API
 
       def list_params
         params.require(:list).permit :title, :deadline
+      end
+
+      def render_errors
+        render json: @list.errors, status: :unprocessable_entity
       end
     end
   end
