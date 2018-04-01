@@ -14,12 +14,13 @@ module API
 
       def authenticate_user!
         raise Unauthorized unless current_user
-      rescue DecodeJWTError
-        raise Unauthorized
       end
 
       def current_user
-        @current_user ||= GetUserFromJWT.new(DecodeJWT.new(raw_token).call).call
+        return @current_user if defined? @current_user
+        @current_user = GetUserFromJWT.new(DecodeJWT.new(raw_token).call).call
+      rescue DecodeJWTError
+        @current_user = nil
       end
 
       def raw_token
