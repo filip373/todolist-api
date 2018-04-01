@@ -50,10 +50,10 @@ RSpec.describe 'API::V1::Lists', type: :request do
         auth_post api_v1_lists_path(list_params)
       end
     end
-    #before do
-      #allow(ListMailer).to receive(:new_list).and_return(stubbed_mailer)
-    #end
-    #let(:stubbed_mailer) { double deliver_later: nil }
+    before do
+      allow(ListMailer).to receive(:new_list).and_return(stubbed_mailer)
+    end
+    let(:stubbed_mailer) { double deliver_later: nil }
 
     let(:list_params) do
       {
