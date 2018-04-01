@@ -50,17 +50,16 @@ RSpec.describe 'API::V1::Lists', type: :request do
         auth_post api_v1_lists_path(list_params)
       end
     end
-    before do
-      allow(ListMailer).to receive(:new_list).and_return(stubbed_mailer)
-    end
-    let(:stubbed_mailer) { double deliver_later: nil }
+    #before do
+      #allow(ListMailer).to receive(:new_list).and_return(stubbed_mailer)
+    #end
+    #let(:stubbed_mailer) { double deliver_later: nil }
 
     let(:list_params) do
       {
         list: {
           title: title,
-          deadline: 1.day.since,
-          user_id: User.first.id
+          deadline: 1.day.since
         }
       }
     end
@@ -74,6 +73,11 @@ RSpec.describe 'API::V1::Lists', type: :request do
 
       it 'changes lists count in db by 1' do
         expect { subject }.to change(List, :count).by(1)
+      end
+
+      it 'creates list for the current user' do
+        subject
+        expect(List.last.user).to eq(authenticated_user)
       end
 
       it 'calls ListMailer' do

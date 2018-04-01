@@ -73,6 +73,7 @@ group :development do
   gem 'guard-brakeman', require: false
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
+  gem 'letter_opener_web', '~> 1.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
   gem 'spring'

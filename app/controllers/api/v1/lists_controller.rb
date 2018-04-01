@@ -21,6 +21,7 @@ module API
       # POST /lists
       def create
         @list = List.new list_params
+        @list.user = current_user
 
         if @list.save
           ListMailer.new_list(@list.id).deliver_later
@@ -53,7 +54,7 @@ module API
       end
 
       def list_params
-        params.require(:list).permit :title, :deadline, :user_id
+        params.require(:list).permit :title, :deadline
       end
     end
   end
