@@ -20,11 +20,8 @@ module API
 
       # POST /lists
       def create
-        @list = List.new list_params
-        @list.user = current_user
-
-        if @list.save
-          ListMailer.new_list(@list.id).deliver_later
+        @list = InitializeList.new(params: list_params, user: current_user).call
+        if SaveNewList.new(@list).call
           render json: @list,
                  status: :created,
                  location: api_v1_list_path(@list)
