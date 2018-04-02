@@ -26,7 +26,7 @@
   "formation": {
   },
   "addons": [
-    "redistogo": "nano"
+    "redistogo:nano"
   ],
   "buildpacks": [
 
