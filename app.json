@@ -20,6 +20,7 @@
     "MAILER_PORT": { "required": true },
     "MAILER_USER_NAME": { "required": true },
     "RAVEN_DSN": { "required": true },
+    "REDIS_PROVIDER": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
   },
   "formation": {
