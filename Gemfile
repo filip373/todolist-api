@@ -17,6 +17,7 @@ end
 
 group :core, :default do
   gem 'active_model_serializers', '~> 0.10.0'
+  gem 'faker'
   gem 'faraday'
   gem 'json-jwt'
   gem 'rails', '~> 5.1.4'
@@ -58,7 +59,6 @@ end
 
 group :development, :test do
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
