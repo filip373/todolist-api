@@ -11,17 +11,23 @@
     "AUTH0_CLIENT_ID": { "required": true },
     "AUTH0_CLIENT_SECRET": { "required": true },
     "AUTH0_DOMAIN": { "required": true },
+    "DISABLE_DATABASE_ENVIRONMENT_CHECK": "1",
     "HEROKU_API_TOKEN": { "required": true },
     "HEROKU_APP_NAME": { "required": true },
     "HOSTNAME": { "required": true },
+    "MAILER_ADDRESS": { "required": true },
     "MAILER_FROM": { "required": true },
+    "MAILER_PASSWORD": { "required": true },
+    "MAILER_PORT": { "required": true },
+    "MAILER_USER_NAME": { "required": true },
     "RAVEN_DSN": { "required": true },
+    "REDIS_PROVIDER": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
   },
   "formation": {
   },
   "addons": [
-
+    "redistogo:nano"
   ],
   "buildpacks": [
 
