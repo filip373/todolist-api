@@ -14,7 +14,11 @@
     "HEROKU_API_TOKEN": { "required": true },
     "HEROKU_APP_NAME": { "required": true },
     "HOSTNAME": { "required": true },
+    "MAILER_ADDRESS": { "required": true },
     "MAILER_FROM": { "required": true },
+    "MAILER_PASSWORD": { "required": true },
+    "MAILER_PORT": { "required": true },
+    "MAILER_USER_NAME": { "required": true },
     "RAVEN_DSN": { "required": true },
     "SECRET_KEY_BASE": { "required": true }
   },
