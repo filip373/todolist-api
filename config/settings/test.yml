@@ -1,10 +1,15 @@
-admin_password: password
-admin_username: admin
-auth0_api_audience: https://todolist-api.test
-auth0_client_id: C76UvHjgoWMaF6cNy62Cln0jau4U3jjX
-auth0_client_secret: PG9IDPFr8BDbrZJ89Soa3YJOOoTHCc0voog2NT9dZD-PAh5rzOTIkRrdJ0J3KC1Q
-auth0_domain: todolist-test.eu.auth0.com
+admin:
+  password: password
+  username: admin
+auth0:
+  api_audience: https://todolist-api.test
+  client_id: C76UvHjgoWMaF6cNy62Cln0jau4U3jjX
+  client_secret: PG9IDPFr8BDbrZJ89Soa3YJOOoTHCc0voog2NT9dZD-PAh5rzOTIkRrdJ0J3KC1Q
+  domain: todolist-test.eu.auth0.com
 hostname: http://todolist.test
-heroku_api_token: test-token
-heroku_app_name: test-app
+heroku:
+  api_token: test-token
+  app_name: test-app
+mailer:
+  from: mailer@todolist.test
 secret_key_base: 091873d055a37d44cf7dba8f0f553047d00818f3d8eaa00b9dc08afa0a03ef832dbf543e2ce4b9153e3f05ef78c7b0a9ceca78797e408226b3061c842d79d722

@@ -17,6 +17,129 @@ securityDefinitions:
 security:
   - authorizationHeader: []
 paths:
+  /lists:
+    get:
+      summary: Fetch all lists
+      description: Fetches all the lists existing in the database
+      tags:
+        - Lists
+      responses:
+        200:
+          description: An array of lists
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/List'
+    post:
+      summary: Create new list
+      description: Creates new list with attributes specified in request body
+      tags:
+        - Lists
+      parameters:
+        - in: body
+          name: list
+          description: The list to create
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+              deadline:
+                type: string
+      responses:
+        200:
+          description: List object
+          schema:
+            type: object
+            $ref: '#/definitions/List'
+        422:
+          description: Unprocessable entity,
+            list could not be created due to invalid attributes
+  /lists/{listId}:
+    get:
+      summary: Fetch list of given ID
+      description: Fetches only the list which ID matches param ID
+      tags:
+        - Lists
+      parameters:
+        - in: path
+          name: listId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the list to get
+      responses:
+        200:
+          description: List object
+          schema:
+            type: object
+            $ref: '#/definitions/List'
+        404:
+          description: List of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update a list
+      description: Updates a list of given ID with attributes
+        specified in request body
+      tags:
+        - Lists
+      parameters:
+        - in: path
+          name: listId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the list to update
+        - in: body
+          name: list
+          description: The new list attributes
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+              deadline:
+                type: string
+      responses:
+        200:
+          description: List object
+          schema:
+            type: object
+            $ref: '#/definitions/List'
+        422:
+          description: Unprocessable entity,
+            list could not be created due to invalid attributes
+        404:
+          description: List of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Deletes list of given ID
+      description: Deletes the list which ID matches param ID from database
+      tags:
+        - Lists
+      parameters:
+        - in: path
+          name: listId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the list to delete
+      responses:
+        204:
+          description: The list has been deleted succesfully
+        404:
+          description: List of given ID not found
+          schema:
+            type: object
+            $ref: '#/definitions/Error'
   /notes:
     get:
       summary: Fetch all notes
@@ -47,6 +170,8 @@ paths:
               title:
                 type: string
               content:
+                type: string
+              list_id:
                 type: string
       responses:
         200:
@@ -106,6 +231,8 @@ paths:
                 type: string
               content:
                 type: string
+              list_id:
+                type: string
       responses:
         200:
           description: Note object
@@ -141,6 +268,8 @@ paths:
             type: object
             $ref: '#/definitions/Error'
 definitions:
+  List:
+    $ref: 'definitions/list.yaml'
   Note:
     $ref: 'definitions/note.yaml'
   Error:

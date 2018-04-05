@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        not_in_future: is not in the future

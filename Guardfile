@@ -83,3 +83,4 @@ guard 'brakeman', quiet: true, run_on_start: true do
   watch(%r{^lib/.+\.rb$})
   watch('Gemfile')
 end
+# rubocop:enable Metrics/BlockLength

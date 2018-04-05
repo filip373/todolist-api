@@ -10,6 +10,8 @@ end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'database_cleaner'
+require 'email_spec'
+require 'email_spec/rspec'
 require 'simplecov'
 require 'shoulda-matchers'
 

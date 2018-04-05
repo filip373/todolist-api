@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe GetUserFromJWT, type: :service do
-  subject { described_class.new(jwt) }
+  subject { described_class.new jwt }
 
   describe '#call' do
     context 'when JWT is nil' do

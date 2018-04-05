@@ -2,6 +2,7 @@
 
 [![codebeat badge](https://codebeat.co/badges/0a6320ea-c3a8-4d20-a94d-af96e8d68d4b)](https://codebeat.co/projects/github-com-filip373-todolist-api-dev)
 [ ![Codeship Status for filip373/todolist-api](https://app.codeship.com/projects/3d2eb010-e6b3-0135-399f-7e29242a5208/status?branch=dev)](https://app.codeship.com/projects/269369)
+[![Depfu](https://badges.depfu.com/badges/7db8d930e4f822c9016113c0204d7cda/overview.svg)](https://depfu.com/github/filip373/todolist-api)
 
 API backend of todolist app
 

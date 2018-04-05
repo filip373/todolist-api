@@ -1,3 +1,6 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
 Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
@@ -5,6 +8,7 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
 Style/Documentation:
   Enabled: false
-AllCops:
+Style/MixinUsage:
   Exclude:
-    - 'db/schema.rb'
+    - 'bin/setup'
+    - 'bin/update'
