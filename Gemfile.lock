@@ -52,7 +52,7 @@ GEM
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
-    bindata (2.4.2)
+    bindata (2.4.3)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     brakeman (4.2.1)
@@ -153,16 +153,15 @@ GEM
       moneta
       multi_json (>= 1.9.2)
     htmlentities (4.3.4)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
     json (2.1.0)
-    json-jwt (1.9.2)
+    json-jwt (1.9.3)
       activesupport
       aes_key_wrap
       bindata
       securecompare
-      url_safe_base64
     jsonapi-renderer (0.2.0)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -330,7 +329,6 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.3.0)
-    url_safe_base64 (0.2.2)
     vcr (4.0.0)
     webmock (3.3.0)
       addressable (>= 2.3.6)
