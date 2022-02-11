@@ -20,7 +20,7 @@ group :core, :default do
   gem 'faker'
   gem 'faraday'
   gem 'json-jwt'
-  gem 'rails', '~> 5.1.4'
+  gem 'rails', '~> 5.2.6'
   gem 'sidekiq'
 end
 
