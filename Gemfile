@@ -33,7 +33,7 @@ group :docs, :default do
 end
 
 group :server, :default do
-  gem 'puma', '~> 3.7'
+  gem 'puma', '~> 5.6'
 end
 
 # Environment groups
